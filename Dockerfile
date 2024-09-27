@@ -7,8 +7,8 @@ COPY ./app /app
 WORKDIR /app
 EXPOSE 8000
 
-RUN python -m env /py && \
-    /py/bin/pip install --upgrade && \
+RUN python -m venv /py && \
+    /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     rm -rf /tmp && \
     adduser \
@@ -16,6 +16,6 @@ RUN python -m env /py && \
         --no-create-home \
         django-user
 
-ENV PARH="/py/bin:$PATH"
+ENV PATH="/py/bin:$PATH"
 
 USER django-user
