@@ -1,3 +1,4 @@
 django>=4.2.16,<4.3
 djangorestframework>=3.15.2,<3.16
 psycopg2>=2.9.9,<2.10
+Faker
