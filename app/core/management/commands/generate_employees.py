@@ -40,7 +40,4 @@ class Command(BaseCommand):
 
             managers = new_managers
 
-        self.stdout.write(self.style.SUCCESS('Successfully created'
-                                             '50000 employees.'))
-
-        
+        self.stdout.write(self.style.SUCCESS('Success! Created employees.'))
