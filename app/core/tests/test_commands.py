@@ -11,6 +11,7 @@ from django.test import SimpleTestCase, TestCase
 
 from core.models import Employee
 
+
 @patch('core.management.commands.wait_for_db.Command.check')
 class CommandWaitForDBTests(SimpleTestCase):
     """Tests commands"""
@@ -31,6 +32,7 @@ class CommandWaitForDBTests(SimpleTestCase):
 
         self.assertEqual(patched_check.call_count, 6)
         patched_check.assert_called_with(databases=['default'])
+
 
 @patch('core.management.commands.generate_employees.Employee.objects.create')
 class CommandGenerateEmployeeTests(TestCase):
