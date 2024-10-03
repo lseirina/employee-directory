@@ -11,7 +11,7 @@ class Command(BaseCommand):
 
     help = 'Generate 50000 employees with 5 levels hierarchy.'
 
-    def handle(self):
+    def handle(self, *args, **options):
         fake = Faker()
         managers = []
 
@@ -23,7 +23,7 @@ class Command(BaseCommand):
                 salary=random.randint(300000, 400000),
                 manager=None
             )
-            managers.append(employee())
+            managers.append(employee)
 
         for level in range(2, 6):
             new_managers = []
@@ -33,7 +33,7 @@ class Command(BaseCommand):
                     full_name=fake.name(),
                     position=f'Manager {level} level',
                     hire_date=fake.date_this_decade(),
-                    salary=random.rendint(100000, 150000),
+                    salary=random.randint(100000, 150000),
                     manager=manager
                 )
                 new_managers.append(employee)
