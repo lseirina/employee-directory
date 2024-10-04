@@ -8,7 +8,8 @@ class Employee(models.Model):
     hire_date = models.DateField()
     salary = models.DecimalField(max_digits=10, decimal_places=2)
     manager = models.ForeignKey('self', null=True, blank=True,
-                                on_delete=models.SET_NULL)
+                                on_delete=models.SET_NULL,
+                                related_name='subordinates')
 
     def __str__(self):
         return self.full_name
