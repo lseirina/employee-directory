@@ -1,4 +1,4 @@
-<li>
+<>
     <strong>{{ employee.full_name}}</strong> - {{ employee.position }} ({{ employee.salary }})
     {% if subordinates %}
     <ul>
@@ -6,4 +6,3 @@
             {% include 'employee_item.html' with employee=item.employee subordinates=item.subordinates %}
         {% endfor %}
     </ul>
-</li>
