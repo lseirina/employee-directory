@@ -27,7 +27,7 @@ class Command(BaseCommand):
 
         for level in range(2, 6):
             new_managers = []
-            for _ in range(50000 // level):
+            for _ in range(50 // level):
                 manager = random.choice(managers)
                 employee = Employee.objects.create(
                     full_name=fake.name(),
