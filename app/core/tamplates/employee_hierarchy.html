@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Hierarchy</title>
+</head>
+<body>
+    <h1>Employee Hierarchy</h1>
+    <ul>
+        {% for item in employees_hierarchy %}
+            {% include 'employee_item.html' with employee=item.employee subordinates=item.subordinates %}
+        {% endfor %}
+    </ul>
+</body>
