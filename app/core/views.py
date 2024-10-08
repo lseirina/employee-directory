@@ -4,7 +4,9 @@ from core.models import Employee
 
 
 def employee_heirarchy(request):
-    top_managers = Employee.objects.filter(manager__isnull=True)
+    top_managers = Employee.objects.filter(
+        manager__isnull=True
+        ).prefetch_related('subordinates')
 
     def get_subordinates(employee):
         """Recursive function to get all subordinates."""
